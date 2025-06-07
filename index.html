@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             text-align: center;
             background: #fff0f5;
             color: #ff1493;
@@ -14,12 +14,14 @@
             position: relative;
             min-height: 100vh;
             -webkit-text-size-adjust: 100%;
+            line-height: 1.5;
         }
         h1 {
-            font-size: 2.2em;
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
             text-shadow: 1px 1px 3px pink;
             margin: 10px 0;
             line-height: 1.3;
+            font-weight: 700;
         }
         .photo {
             width: 85%;
@@ -44,7 +46,7 @@
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
-            font-size: 0.95em;
+            font-size: 1rem;
         }
         .secret-message {
             display: none;
@@ -56,8 +58,8 @@
             margin: 15px auto;
             position: relative;
             z-index: 1;
-            line-height: 1.5;
-            font-size: 0.9em;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         .secret-trigger {
             cursor: pointer;
@@ -71,7 +73,7 @@
             padding: 10px 18px;
             border-radius: 50px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 0.95em;
+            font-size: 0.95rem;
             width: 80%;
             max-width: 300px;
         }
@@ -89,7 +91,7 @@
             text-align: center;
             border: 3px dashed white;
             box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-            font-size: 0.95em;
+            font-size: 0.95rem;
         }
         button {
             background: #ff69b4;
@@ -97,18 +99,19 @@
             border: none;
             padding: 10px 18px;
             border-radius: 5px;
-            font-size: 0.95em;
+            font-size: 0.95rem;
             cursor: pointer;
             margin: 10px auto;
             display: block;
             width: 80%;
             max-width: 200px;
+            font-weight: 600;
         }
         .trick-button:hover, button:hover {
             transform: scale(1.05);
         }
         .trick-subtext {
-            font-size: 0.75em;
+            font-size: 0.8rem;
             opacity: 0.7;
             margin-top: 5px;
         }
@@ -145,6 +148,8 @@
             user-select: none;
         }
     </style>
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Floating Hearts Background -->
