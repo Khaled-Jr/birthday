@@ -11,10 +11,12 @@
             padding: 20px;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
         h1 {
             font-size: 3em;
             text-shadow: 2px 2px 4px pink;
+            margin-bottom: 10px;
         }
         .photo {
             width: 250px;
@@ -22,6 +24,10 @@
             border: 5px solid #ff69b4;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             margin: 20px;
+            transition: transform 0.3s;
+        }
+        .photo:hover {
+            transform: rotate(2deg) scale(1.05);
         }
         .message {
             background: white;
@@ -52,21 +58,48 @@
             display: inline-block;
             position: relative;
             z-index: 1;
-        }
-        button {
-            background: #ff69b4;
-            color: white;
-            border: none;
+            background: white;
             padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            margin: 10px;
-            position: relative;
-            z-index: 1;
+            border-radius: 50px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
-        
-        /* Floating Hearts */
+        .trick-button {
+            margin: 25px auto;
+            padding: 15px;
+            width: 200px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-align: center;
+            border: 3px dashed white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .trick-button:hover {
+            background: #ff4757;
+            transform: rotate(-2deg);
+        }
+        .trick-subtext {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        .finale {
+            animation: pulse 0.5s 3, shake 0.5s 3;
+            background: linear-gradient(45deg, #ff6b6b, #ffa502) !important;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
         .heart {
             position: absolute;
             pointer-events: none;
@@ -76,16 +109,9 @@
             color: #ff6b6b;
             z-index: 0;
         }
-        
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-                opacity: 0.9;
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(10deg); opacity: 0.9; }
         }
     </style>
 </head>
@@ -95,24 +121,29 @@
     
     <h1>Happy Birthday BB Tastusi! 🎂</h1>
     
-    <img src="photo1.jpg" class="photo" alt="Us Together">
+    <img src="tastusi.jpg" class="photo" alt="Tastusi">
 
     <div class="message">
         <p>GO SHAWTY IT'S YO BIRTHDAY,</p>
         <p>Dear Tastusi,<br>
-        I hope this email finds you well, I LOVE YOU <3<br>
-        Thank you for your understanding.<br>
+        I hope this website finds you well, I LOVE YOU <3.<br>
         ur khaskhusi</p>
         
         <!-- CLICKABLE SURPRISE BUTTON -->
         <button onclick="confetti(); alert('Tastusi, you light up my world! 🌟')">
-            💌 Click for a surprise!
+            Don't click please 
         </button>
+    </div>
+
+    <!-- Sneaky Birthday Anthem Button -->
+    <div class="trick-button" id="trickButton">
+        🚫 DON'T CLICK HERE TOO 🚫
+        <div class="trick-subtext">(seriously, nothing will happen)</div>
     </div>
 
     <!-- HIDDEN MESSAGE TOGGLE -->
     <div class="secret-trigger" onclick="document.querySelector('.secret-message').style.display='block'">
-        🎀 Click here babes (lots of reading tho) 🎀
+        🎀 Click me "lots of reading tho" 🎀
     </div>
     
     <div class="secret-message">
@@ -136,7 +167,7 @@
     
     <!-- Floating Hearts Script -->
     <script>
-        // Create floating hearts with better distribution
+        // Create floating hearts
         function createHearts() {
             const container = document.getElementById('hearts-container');
             const heartCount = 20;
@@ -166,7 +197,94 @@
                 container.appendChild(heart);
             }
         }
-        
+    </script>
+    
+    <!-- Birthday Anthem Script -->
+    <script>
+        // Happy Birthday melody
+        const notes = [
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 293.66, duration: 0.6 }, // D
+            { tone: 261.63, duration: 0.6 }, // C
+            { tone: 349.23, duration: 0.6 }, // F
+            { tone: 329.63, duration: 0.9 }, // E
+            
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 293.66, duration: 0.6 }, // D
+            { tone: 261.63, duration: 0.6 }, // C
+            { tone: 392.00, duration: 0.6 }, // G
+            { tone: 349.23, duration: 0.9 }, // F
+            
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 261.63, duration: 0.3 }, // C
+            { tone: 523.25, duration: 0.6 }, // C (high)
+            { tone: 440.00, duration: 0.6 }, // A
+            { tone: 349.23, duration: 0.6 }, // F
+            { tone: 329.63, duration: 0.6 }, // E
+            { tone: 293.66, duration: 0.9 }, // D
+            
+            { tone: 466.16, duration: 0.3 }, // Bb
+            { tone: 466.16, duration: 0.3 }, // Bb
+            { tone: 440.00, duration: 0.6 }, // A
+            { tone: 349.23, duration: 0.6 }, // F
+            { tone: 392.00, duration: 0.6 }, // G
+            { tone: 349.23, duration: 1.2 }  // Final F (longer)
+        ];
+
+        let currentNote = 0;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const button = document.getElementById('trickButton');
+
+        button.addEventListener('click', () => {
+            const isFinalNote = currentNote === notes.length - 1;
+            
+            playNote(notes[currentNote]);
+            
+            if (isFinalNote) {
+                // EPIC FINALE
+                confetti({
+                    particleCount: 200,
+                    spread: 90,
+                    origin: { y: 0.5 },
+                    colors: ['#ff0000', '#ff69b4', '#ffa502']
+                });
+                button.classList.add('finale');
+                setTimeout(() => {
+                    button.classList.remove('finale');
+                    button.innerHTML = "🚫 DON'T CLICK HERE 🚫<br><span class='trick-subtext'>(seriously, nothing will happen)</span>";
+                }, 2000);
+                button.innerHTML = "SURPRISE! HAPPY BIRTHDAY!<br><span class='trick-subtext'>🎂🎉🎊</span>";
+            }
+            
+            // Change button text to build anticipation
+            if(currentNote === 2) button.textContent = "👀 Oops... you clicked it";
+            if(currentNote === 3) button.textContent = "🎵 Keep going...";
+            
+            currentNote = (currentNote + 1) % notes.length;
+        });
+
+        function playNote(note) {
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.value = note.tone;
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + note.duration);
+            
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + note.duration);
+            
+            // Visual feedback
+            button.style.transform = 'scale(1.05)';
+            setTimeout(() => button.style.transform = 'scale(1)', 100);
+        }
+
         // Create hearts when page loads
         window.onload = createHearts;
     </script>
