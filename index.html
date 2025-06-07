@@ -1,41 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Birthday BB Tastusi! 💖</title> <!-- Replace 🔶HER NAME🔶 -->
+    <title>Happy Birthday BB Tastusi! 💖</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
-            background: #fff0f5; /* 🔶 Background color (change #fff0f5 to other pink codes) */
-            color: #ff1493; /* 🔶 Text color (try #d81b60 for darker pink) */
+            background: #fff0f5;
+            color: #ff1493;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
         }
-        /* ... (other CSS remains the same) ... */
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px pink;
+        }
+        .photo {
+            width: 250px;
+            border-radius: 15px;
+            border: 5px solid #ff69b4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px;
+        }
+        .message {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        .secret-message {
+            display: none;
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+        .secret-trigger {
+            cursor: pointer;
+            color: #d81b60;
+            font-weight: bold;
+            margin: 15px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+            font-size: 20px;
+            color: #ff6b6b;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.9;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- 🔶 CHANGE THESE 3 MAIN PARTS 🔶 -->
-    <h1>Happy Birthday BB Tastusi! 🎂</h1> <!-- Replace 🔶HER NAME🔶 -->
+    <!-- Floating Hearts Background -->
+    <div id="hearts-container"></div>
     
-    <img src="🔶photo1.jpg🔶" class="photo" alt="Us Together"> <!-- Replace 🔶photo1.jpg🔶 with your actual filename -->
+    <h1>Happy Birthday BB Tastusi! 🎂</h1>
+    
+    <img src="photo1.jpg" class="photo" alt="Us Together">
 
     <div class="message">
-        <p>GO SHAWTY IT'S YO BIRTHDAY,</p> <!-- Replace 🔶girlfriend🔶 (e.g., "sweetheart") -->
-        <p> Dear Tastusi,<br>
+        <p>GO SHAWTY IT'S YO BIRTHDAY,</p>
+        <p>Dear Tastusi,<br>
         I hope this email finds you well, I LOVE YOU <3<br>
         Thank you for your understanding.<br>
-        ur khaskhusi</p> <!-- Replace this line -->
+        ur khaskhusi</p>
+        
+        <!-- CLICKABLE SURPRISE BUTTON -->
+        <button onclick="confetti(); alert('Tastusi, you light up my world! 🌟')">
+            💌 Click for a surprise!
+        </button>
     </div>
 
-    <!-- 🔶 Hidden message customization 🔶 -->
-    <div class="secret-message">
-        so basically i've never done this b4, and ig im making a website or smth rn to say happy birthday to my bb tastusi<br>
-      so basically chatgbt gave me tons of ideas and a hidden message was on of them, i liked the idea and here i am doing it <br>
-      mb that was so much talking, i should be talking about ur birthday tf am i doing<br>
-      Happy birthday, habibi tastusi! It's your first birthday after we became each other's cutie patootie pookies UWU. I'm not good with making stuff for birthdays and cards and stuff like that, but I mean, I'm trying babe chillluhhhhh!! <br>
-      anyway tastusi, ur 19 now hehe, ik ur losing ur victim card cz everyday ur getting further away from ur ideal life stage "MINOR", u should be happy tho cz if that didnt happen you'd be literally dead<br>
-      ig i shouldnt say this for a birthday letter, anyway luvluvi, ur so lovely cutie patootie and easily loved by literally everyone, anyone who gets to know my bb literally falls for that perfect ahh personality (im the first victim), and them eyes.... OHH MAHH GAHHD dont even get me started i love them, idk if i told you b4 but dyk what my grandma used to tell me, "fall in love with the eyes, they never change" and so i did, and not just the eyes bb ur literally perfect i love everything about u and somehow i was lucky enough to pull the MIGHTY TASTUSI HERSELF!!<br>
-      also bb i'm so proud of u, even tho ur still young af ur so responsible AKA "ur so mature for age" ;) u have a whole ass job u do great in college u help ur family sm and you love helping people in general it doesnt matter who<br>
-      ily sooooo much tastusi and i hope this year will be sooo good to u, my eid was two eids this years cz its my bbs birthday too, I hope allllllll ur dreams come true and may Allah make u happy all the time, ilysm and sorry u have to read all that mb mb <!-- Replace this -->
+    <!-- HIDDEN MESSAGE TOGGLE -->
+    <div class="secret-trigger" onclick="document.querySelector('.secret-message').style.display='block'">
+        🎀 Click here babes (lots of reading tho) 🎀
     </div>
+    
+    <div class="secret-message">
+        so basically i've never done this b4, and ig im making a website or smth rn to say happy birthday to my bb tastusi, chatgpt gave me tons of ideas and a hidden message was on of them, i liked the idea and here i am doing it 😎<br><br>
+        mb that was so much talking, i should be talking about ur birthday tf am i doing <br><br>
+        Happy birthday, habibi tastusi! It's your first birthday after we became each other's cutie patootie pookies UWU❤❤. I'm not good with making stuff for birthdays and cards and stuff like that, but I mean, I'm trying babe chillluhhhhh!!<br><br>
+        anyway tastusi, ur 19 now hehe, ik ur losing ur victim card cz everyday ur getting further away from ur ideal life stage "MINOR", u should be happy tho cz if that didnt happen you'd be literally dead<br><br>
+        ig i shouldnt say this for a birthday letter, anyway luvluvi, ur so lovely cutie patootie and easily loved by literally everyone, anyone who gets to know my bb literally falls for that perfect ahh personality (im the first victim), and them eyes.... OHH MAHH GAHHD dont even get me started i love them, idk if i told you b4 but dyk what my grandma used to tell me, "fall in love with the eyes, they never change" and so i did, and not just the eyes bb ur literally perfect i love everything about u and somehow i was lucky enough to pull the MIGHTY TASTUSI HERSELF!!😱😱<br><br>
+        also bb i'm so proud of u, even tho ur still young af ur so responsible AKA "ur so mature for age🫦", u have a whole ass job u do great in college u help ur family sm and you love helping people in general it doesnt matter who<br><br>
+        ily sooooo much tastusi and i hope this year will be sooo good to u, my eid was two eids this years cz its my bbs birthday too, I hope allllllll ur dreams come true and may Allah make u happy all the time, ilysm and sorry u had to read all that mb mb👉🏼👈🏼
+    </div>
+
+    <!-- FLOATING HEART EASTER EGG -->
+    <div style="position: fixed; bottom: 20px; right: 20px; font-size: 2em; cursor: pointer;" 
+         onclick="alert('No matter where you click, I love you most! 💘')">
+        ♡
+    </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Floating Hearts Script -->
+    <script>
+        // Create floating hearts with better distribution
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20;
+            const columns = 5;
+            const rows = 4;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.classList.add('heart');
+                
+                // Calculate grid position
+                const col = i % columns;
+                const row = Math.floor(i / columns);
+                
+                // Position in grid cells with some randomness
+                const left = (col * (100/columns)) + (Math.random() * 15) + '%';
+                const top = (row * (100/rows)) + (Math.random() * 20) + '%';
+                
+                heart.style.left = left;
+                heart.style.top = top;
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.animationDuration = 4 + Math.random() * 5 + 's';
+                heart.style.fontSize = 15 + Math.random() * 20 + 'px';
+                heart.style.opacity = 0.4 + Math.random() * 0.5;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create hearts when page loads
+        window.onload = createHearts;
+    </script>
 </body>
 </html>
